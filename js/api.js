@@ -12,5 +12,6 @@ export async function getApi(){
 
     } catch(error){
         console.log(error.message)
+        
     }
 }
