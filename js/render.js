@@ -1,4 +1,5 @@
 import { getApi } from "./api.js";
+import { modal } from "./modal.js";
 const dataApi = await getApi()
 console.log(dataApi)
 function affichageCards() {
@@ -6,7 +7,7 @@ function affichageCards() {
     const cards = dataApi.map(card => {
         if (card.type === "movie") {
             return `
-        <div class=" rounded-xl hover:tran bg-slate-900 ">
+        <div id="${card.id}" class="filmes rounded-xl hover:tran bg-slate-900 ">
                 <img src="${card.image}" alt="conveture filme" class="rounded-t-xl">
                 <div class=" flex flex-col gap-1 p-2">
                     <div class="flex justify-between text-xs">
@@ -25,7 +26,7 @@ function affichageCards() {
         }
         else{
             return `
-        <div class=" rounded-xl hover:tran bg-slate-900 ">
+        <div id="${card.id}" class="filmes rounded-xl hover:tran bg-slate-900 ">
                 <img src="${card.image}" alt="conveture filme" class="rounded-t-xl">
                 <div class=" flex flex-col gap-1 p-2">
                     <div class="flex justify-between ">
@@ -49,3 +50,4 @@ function affichageCards() {
     console.log('test')
 }
 affichageCards()
+modal(dataApi)

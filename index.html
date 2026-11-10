@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineTrack</title>
     <link rel="stylesheet" href="./css/output.css">
 </head>
+
 <body class="bg-slate-950">
     <header class="bg-slate-900 h-15 flex items-center px-4">
         <div>
@@ -19,12 +21,15 @@
     <main class="flex px-8 flex-col gap-1 text-sm">
         <h3 class="text-slate-100 text-3xl font-bold">Catalogue Films & Séries</h3>
         <p class="text-slate-400">Explorez, filtrez et sauvegardez vos chefs-d'œuvre favoris en un clic</p>
-        <section class="flex flex-col gap-1 py-3 px-4 bg-slate-900 rounded-xl border-slate-800 shadow-slate-900 my-4 md:flex-row md:justify-between">
+        <section
+            class="flex flex-col gap-1 py-3 px-4 bg-slate-900 rounded-xl border-slate-800 shadow-slate-900 my-4 md:flex-row md:justify-between">
             <div>
                 <label for="rechercher"></label>
-                <input type="text" name="rechercher" id="rechercher" placeholder="Recherrcher par titre..." class="bg-slate-800 border w-full border-slate-950 rounded-sm  py-1 px-2 focus:outline-0 md:w-100">
+                <input type="text" name="rechercher" id="rechercher" placeholder="Recherrcher par titre..."
+                    class="bg-slate-800 border w-full border-slate-950 rounded-sm  py-1 px-2 focus:outline-0 md:w-100">
             </div>
-            <div class="grid grid-cols-3 items-center justify-between gap-2 bg-slate-950 text-slate-800 font-semibold rounded-sm p-1 border border-slate-800 md:w-120">
+            <div
+                class="grid grid-cols-3 items-center justify-between gap-2 bg-slate-950 text-slate-800 font-semibold rounded-sm p-1 border border-slate-800 md:w-120">
                 <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm">Tous</button>
                 <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm">Films</button>
                 <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm">Series</button>
@@ -35,9 +40,10 @@
             <span>Filtre : Tous</span>
         </div>
         <div id="container-cards" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-slate-400 ">
-                <!-- les cards sens affichier par DOM-->        
+            <!-- les cards sens affichier par DOM-->
         </div>
         <div id="pagination">
+
 
         </div>
     </main>
@@ -46,4 +52,5 @@
     </footer>
     <script type="module" src="/js/render.js"></script>
 </body>
+
 </html>
