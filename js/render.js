@@ -1,10 +1,11 @@
 import { getApi } from "./api.js";
 import { modal } from "./modal.js";
+import { searchFilter } from "./filters.js";
 const dataApi = await getApi()
 console.log(dataApi)
-function affichageCards() {
+export function affichageCards(data) {
     const containerCards = document.getElementById('container-cards')
-    const cards = dataApi.map(card => {
+    const cards = data.map(card => {
         if (card.type === "movie") {
             return `
         <div id="${card.id}" class="filmes rounded-xl hover:tran bg-slate-900 ">
@@ -49,5 +50,6 @@ function affichageCards() {
     containerCards.innerHTML = cards.join("")
     console.log('test')
 }
-affichageCards()
+affichageCards(dataApi)
 modal(dataApi)
+searchFilter(dataApi, affichageCards)
