@@ -1,5 +1,5 @@
 import { modal } from "./modal.js";
-import { affichageCards } from "./render.js";
+import { affichageCards, pagenation } from "./render.js";
 
 export function searchFilter(dataApi, affichageCards) {
     const rechercher = document.getElementById('rechercher');
@@ -23,18 +23,20 @@ export function searchFilter(dataApi, affichageCards) {
             const resultFilter = typeFilme === "Tous" || data.type === typeFilme
             return resultSersh && resultFilter;
         })
+        
         console.log(datafilter)
         containeCards.innerHTML = ""
         
         affichageCards(datafilter)
+        pagenation(datafilter, 1)
         modal(datafilter)
     }
 
     let sersh = ""
     rechercher.addEventListener('input', (e) => {
         sersh = e.target.value.trim().toLowerCase();
-        console.log(sersh)
         filterFilms()
     })
+    
 }
 
