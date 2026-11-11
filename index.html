@@ -19,8 +19,11 @@
         </div>
     </header>
     <main class="flex px-8 flex-col gap-1 text-sm">
-        <h3 class="text-slate-100 text-3xl font-bold">Catalogue Films & Séries</h3>
-        <p class="text-slate-400">Explorez, filtrez et sauvegardez vos chefs-d'œuvre favoris en un clic</p>
+        <div class="m-4">
+            <h3 class="text-slate-100 text-3xl font-bold">Catalogue Films & Séries</h3>
+            <p class="text-slate-400">Explorez, filtrez et sauvegardez vos chefs-d'œuvre favoris en un clic</p>
+        </div>
+
         <section
             class="flex flex-col gap-1 py-3 px-4 bg-slate-900 rounded-xl border-slate-800 shadow-slate-900 my-4 md:flex-row md:justify-between">
             <div>
@@ -28,12 +31,14 @@
                 <input type="text" name="rechercher" id="rechercher" placeholder="Recherrcher par titre..."
                     class="bg-slate-800 border w-full border-slate-950 rounded-sm  py-1 px-2 focus:outline-0 md:w-100">
             </div>
-            <div
-                class="grid grid-cols-3 items-center justify-between gap-2 bg-slate-950 text-slate-800 font-semibold rounded-sm p-1 border border-slate-800 md:w-120"
+            <div class="grid grid-cols-3 items-center justify-between gap-2 bg-slate-950 text-slate-800 font-semibold rounded-sm p-1 border border-slate-800 md:w-120"
                 id="filter">
-                <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm" data-type="Tous">Tous</button>
-                <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm" data-type="movie">Movie</button>
-                <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm" data-type="series">Series</button>
+                <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm cursor-pointer"
+                    data-type="Tous">Tous</button>
+                <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm cursor-pointer"
+                    data-type="movie">Movie</button>
+                <button class="px-2 hover:hover:bg-slate-700 focus:bg-red-700 rounded-sm cursor-pointer"
+                    data-type="series">Series</button>
             </div>
         </section>
         <div class="flex justify-between text-slate-600">
@@ -43,8 +48,10 @@
         <div id="container-cards" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-slate-400 ">
             <!-- les cards sens affichier par DOM-->
         </div>
-        <div id="pagination">
+        <div id="pagination" class="m-4 flex justify-center">
+            <ul id="listePaenation" class="flex gap-3">
 
+            </ul>
 
         </div>
     </main>
