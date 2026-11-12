@@ -74,8 +74,7 @@ export function pagenation(datafilter, pageActuelle) {
 }
 
 
-affichageCards(dataApi)
-favoris()
+//affichageCards(dataApi)
 pagenation(dataApi, 1)
 modal(dataApi)
 searchFilter(dataApi, affichageCards)
