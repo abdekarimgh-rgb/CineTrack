@@ -7,7 +7,6 @@ export function modal(dataApi) {
             const filmeInfo = dataApi.find(element => {
                 return element.id === filme.id
             })
-            console.log(filmeInfo)
 
             const body = document.querySelector('body')
             const divModal = document.createElement('div')
@@ -68,7 +67,7 @@ export function modal(dataApi) {
             body.appendChild(divModal)
             const genres = document.getElementById('genres')
             const infoGenres = filmeInfo.genres
-            console.log(infoGenres)
+            
             infoGenres.forEach(element => {
                 genres.innerHTML += `<span class="bg-slate-700 border border-slate-600 rounded-lg px-2">${element}</span>`
             })
