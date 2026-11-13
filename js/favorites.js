@@ -7,7 +7,7 @@ export function favoris(data) {
     const tabFavoris = JSON.parse(localStorage.getItem('favoris')) || [];
     
     affichage()
-    
+    compterMoviesSeries(tabFavoris)
     const buttons = document.querySelectorAll('.btnFavoris')
     reaffichage(tabFavoris)
     
@@ -40,6 +40,7 @@ export function favoris(data) {
                 tabFavoris.splice(index, 1)
             }
             sauvgarder(tabFavoris)
+            compterMoviesSeries(tabFavoris)
             console.log(tabFavoris)
             affichage()
             
@@ -89,9 +90,6 @@ function sauvgarder(tab){
     localStorage.setItem("favoris", JSON.stringify(tab))
 }
 
-
-
-
 function reaffichage(tab){
     const bottons = document.querySelectorAll(".btnFavoris")
     
@@ -130,7 +128,36 @@ function supprimeFavoris(tab, affichage){
             tab.splice(index, 1)
             sauvgarder(tab)
             reaffichage(tab)
+            compterMoviesSeries(tab)
             affichage()
         })
     })
+}
+
+function compterMoviesSeries(tab){
+    const NMovies = tab.reduce((total, element)=>{
+        if(element.type === "movie"){
+            console.log(element.type)
+            return total + 1
+        }
+        return total
+    }, 0);
+
+    console.log(NMovies)
+
+    const NSeries = tab.reduce((total, element)=>{
+        if(element.type === "series"){
+            return total + 1
+        }
+        console.log(total)
+        return total
+    },0)
+
+    console.log(NSeries)
+
+    const placeMovies = document.getElementById("placeMovies")
+    const placeSeries = document.getElementById('placeSeries')
+
+    placeMovies.textContent = `${NMovies} Movies`
+    placeSeries.textContent = `${NSeries} Series`
 }
