@@ -17,6 +17,7 @@ export function searchFilter(dataApi, affichageCards) {
         })
     })
 
+
     function filterFilms() {
         const datafilter = dataApi.filter(data => {
             const resultSersh = data.title.toLowerCase().includes(sersh)
@@ -26,7 +27,7 @@ export function searchFilter(dataApi, affichageCards) {
         
         console.log(datafilter)
         containeCards.innerHTML = ""
-        
+        styleBtnFilter()
         affichageCards(datafilter)
         pagenation(datafilter, 1)
         modal(datafilter)
@@ -40,3 +41,32 @@ export function searchFilter(dataApi, affichageCards) {
     
 }
 
+function styleBtnFilter(){
+    const btn = document.getElementById("filter");
+    const btnFilter = document.querySelectorAll(".btn-filter")
+
+
+    btn.addEventListener('click', (event) =>{
+        const button = event.target.closest(".btn-filter")
+        console.log("button  target = ", button)
+        btnFilter.forEach(Element =>{
+            if(Element === button){
+                Element.classList.add("bg-red-800")
+                console.log(Element.style.backgroundColor)
+                console.log(button === Element)
+                console.log(Element)
+            }
+            else{
+                Element.classList.remove("bg-red-800")
+                console.log(Element.style.backgroundColor)
+
+                if(Element.style.backgroundColor === "red"){
+                    Element.style.backgroundColor = ""
+                }
+                
+                console.log(button === Element)
+                console.log(Element)
+            }
+        })
+    })
+}
