@@ -56,7 +56,15 @@ export function pagenation(datafilter, pageActuelle) {
     const listePaenation = document.getElementById('listePaenation')
     const tab = [...Array(Math.ceil(datafilter.length / limite)).keys()]
     const tabAfficher = tab.map(element => {
-        return `<li class="numberPage bg-slate-800 inline py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-600" data-page="${element + 1}">${element + 1}</li>`
+        let color = ""
+        const active = element + 1 === pageActuelle
+        if(active){
+            color = "bg-red-600"
+        }
+        else{
+            color = "bg-slate-800"
+        }
+        return `<li class="numberPage ${color} inline py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-600" data-page="${element + 1}">${element + 1}</li>`
     })
     listePaenation.innerHTML = ""
     listePaenation.innerHTML = tabAfficher.join("")

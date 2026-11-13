@@ -16,7 +16,6 @@ export function favoris(data) {
             event.stopPropagation()
 
             const button = event.target.closest('.btnFavoris')
-            console.log(button.dataset.film)
 
             const filmeId = button.dataset.film
 
@@ -41,20 +40,16 @@ export function favoris(data) {
             }
             sauvgarder(tabFavoris)
             compterMoviesSeries(tabFavoris)
-            console.log(tabFavoris)
             affichage()
             
             data.forEach(Element => {
                 if (tabFavoris.some(Element => filme.id === Element.id)) {
-
-                    console.log('test')
                     icon.setAttribute('data-prefix', 'fas')
                 }
-
             })
-
         })
     })
+
     function affichage() {
         const contenairFavoris = document.getElementById('contenair-favoris')
         contenairFavoris.innerHTML = ""
@@ -106,7 +101,7 @@ function reaffichage(tab){
             }
             return
         }
-        console.log("test ",icon)
+
         if(existe){
             icon.classList.replace("fa-regular", "fa-solid")
         }
@@ -121,9 +116,7 @@ function supprimeFavoris(tab, affichage){
     supprimer.forEach(supp =>{
         supp.addEventListener("click", event =>{
             const idFavori = event.target.closest(".supprimer").dataset.number
-            console.log("favori id=", idFavori)
             const index = tab.findIndex(T=> T.id === idFavori)
-            console.log(index)
 
             tab.splice(index, 1)
             sauvgarder(tab)
@@ -137,23 +130,17 @@ function supprimeFavoris(tab, affichage){
 function compterMoviesSeries(tab){
     const NMovies = tab.reduce((total, element)=>{
         if(element.type === "movie"){
-            console.log(element.type)
             return total + 1
         }
         return total
     }, 0);
 
-    console.log(NMovies)
-
     const NSeries = tab.reduce((total, element)=>{
         if(element.type === "series"){
             return total + 1
         }
-        console.log(total)
         return total
     },0)
-
-    console.log(NSeries)
 
     const placeMovies = document.getElementById("placeMovies")
     const placeSeries = document.getElementById('placeSeries')

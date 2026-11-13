@@ -551,6 +551,9 @@
   .bg-slate-950 {
     background-color: var(--color-slate-950);
   }
+  .fill-current {
+    fill: currentcolor;
+  }
   .object-cover {
     object-fit: cover;
   }
@@ -757,6 +760,9 @@
   .focus\:outline-0:focus {
     outline-style: var(--tw-outline-style);
     outline-width: 0px;
+  }
+  .active\:bg-red-700:active {
+    background-color: var(--color-red-700);
   }
   @media (width >= 40rem) {
     .sm\:grid {
