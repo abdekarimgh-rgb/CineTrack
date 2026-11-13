@@ -1,4 +1,4 @@
-# 🎬 CinéTrack
+#  CinéTrack
 
 ## Présentation du projet
 
@@ -8,25 +8,25 @@ L'application permet également de rechercher des titres, de filtrer les résult
 
 ## Fonctionnalités principales
 
-### 🎞️ Catalogue
+###  Catalogue
 
 - Affichage des films et des séries sous forme de cards.
 - Présentation de l'image, du titre, de l'année de sortie et du type.
 - Affichage dynamique des données récupérées depuis l'API.
 
-### 🔎 Recherche et filtrage
+###  Recherche et filtrage
 
 - Recherche d'un film ou d'une série par son titre.
 - Filtrage par type : Tous, Films et Séries.
 - Possibilité d'utiliser la recherche et le filtre simultanément.
 
-### 📄 Pagination
+###  Pagination
 
 - Affichage de 8 éléments par page.
 - Navigation entre les différentes pages.
 - Retour automatique à la première page après une recherche ou un changement de filtre.
 
-### 📌 Modal
+###  Modal
 
 - Ouverture d'une fenêtre modale en cliquant sur une card.
 - Affichage des informations détaillées :
@@ -38,7 +38,7 @@ L'application permet également de rechercher des titres, de filtrer les résult
   - Pays de production.
   - Description.
 
-### ❤️ Gestion des favoris
+###  Gestion des favoris
 
 - Ajout et suppression des favoris avec un bouton cœur.
 - Affichage des favoris dans une sidebar fixe.
@@ -46,7 +46,7 @@ L'application permet également de rechercher des titres, de filtrer les résult
 - Sauvegarde des favoris dans le `localStorage`.
 - Conservation des favoris après actualisation de la page.
 
-### ⚠️ Gestion des erreurs
+###  Gestion des erreurs
 
 - Vérification de la réponse de l'API avec `response.ok`.
 - Gestion des erreurs avec `try/catch`.
